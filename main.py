@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 api = CurrencyAPI(API_KEY)
-
+"""Kozna godzina aktualizuje kursy walut"""
 @bot.event
 async def on_ready():
     print(f'Bot {bot.user.name} jest gotowy!')
@@ -35,7 +35,7 @@ async def aktualizuj_kursy():
         await channel.send(embed=embed)
     except Exception as e:
         print(f"Blad aktualizacji: {e}")
-
+"""Komanda dla bota"""
 @bot.command()
 async def przelicz(ctx, kwota: float, z_waluty: str, na_walute: str):
     try:
